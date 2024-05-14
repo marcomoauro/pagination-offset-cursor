@@ -1,6 +1,6 @@
-# Node backend template
+# Pagination offset cursor
 
-Backend template for Node.js.
+This is a simple project to demonstrate how to implement pagination using offset and cursor.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ yarn install
 
 ## How to use
 
-- Create the .env file based on the env-template, the only env to configure is DATABASE_URL.
+- Create the .env file based on the env-template.
 - Starts the server by executing:
 ```sh
 yarn serve:development
@@ -22,4 +22,4 @@ yarn serve:development
 
 ## References
 I talk about this project in this episode of my tech newsletter:
-https://implementing.substack.com/p/my-backend-template-for-nodejs
+https://implementing.substack.com/p/how-to-make-the-best-use-of-api-pagination
