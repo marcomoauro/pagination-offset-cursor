@@ -14,7 +14,7 @@ export const getCustomersByOffsetPagination = async ({limit, offset}) => {
 
 export const getCustomersByCursorPagination = async ({limit, cursor}) => {
   limit = parseInt(limit);
-  cursor = parseInt(cursor);
+  cursor &&= parseInt(cursor);
 
   log.info('Controller::customer::getCustomersByCursorPagination', {limit, cursor})
 

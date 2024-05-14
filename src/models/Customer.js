@@ -43,13 +43,23 @@ export default class Customer {
   static getByCursorPagination = async ({limit, cursor}) => {
     log.info('Model::Customer::getByCursorPagination', {limit, cursor})
 
+    const params = []
+
+    let where_clause = ''
+    if (cursor) {
+      where_clause = `where id > ?`
+      params.push(cursor)
+    }
+
+    params.push(limit)
+
     const rows = await query(`
         select *
         from customers
-        ${cursor ? `where id > ?` : ''}
+        ${where_clause}
         order by id
         limit ?
-    `, [cursor, limit]);
+    `, params);
 
     const customers = rows.map(Customer.fromDBRow)
 
